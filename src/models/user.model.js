@@ -55,7 +55,7 @@ const userSchema = new Schema(
 //we will use pre hook just before saving the password, to encrypt it
 userSchema.pre("save" , async function (next) {
     if(!this.isModified("password")) return next();
-    this.password = bcrypt.hash(this.password, 10)  //10 is the number of rounds bcrypt will use to encrypt the password
+    this.password = await bcrypt.hash(this.password, 10)  //10 is the number of rounds bcrypt will use to encrypt the password
     next()
 })
 

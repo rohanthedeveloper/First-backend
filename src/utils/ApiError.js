@@ -8,7 +8,7 @@ class ApiError extends Error{
         stack = ""
     ){
         super(message)
-        this.statusCode = statusCode   //this keyword is used to override variables
+        this.statusCode = statusCode   //`this` keyword is used to override variables
         this.errors = errors
         this.stack = stack
         this.data = null

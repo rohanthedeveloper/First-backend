@@ -26,4 +26,13 @@ app.use(express.static("public"))  //public here is the folder name we made earl
 //configuring cookie parser
 app.use(cookieParser())
 
+
+//routes import
+import userRouter from './routes/user.routes.js'
+
+//routes declaration
+app.use("/api/v1/users" , userRouter)      //in this use() method we first give the url part and then the method to run (here userRouter)
+//api/v1 is just a standard practice followed. our main part is the users only
+//http://localhost:8000/api/v1/users/register
+
 export { app }
